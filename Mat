@@ -1,0 +1,310 @@
+class Mat {
+  
+
+  /*
+  void tilfeldigPlassering() {
+   
+   if (!rand) {
+   breadX = int(random(120, 1700));
+   breadY = int(random(160, 500));
+   
+   eggX = int(random(120, 1700));
+   eggY = int(random(160, 500));
+   
+   gulostX = int(random(120, 1700));
+   gulostY = int(random(160, 500));
+   
+   juiceX = int(random(120, 1700));
+   juiceY = int(random(160, 500));
+   
+   knekkebrodX = int(random(120, 1700));
+   knekkebrodY = int(random(160, 500));
+   
+   koktskinkeX = int(random(120, 1700));
+   koktskinkeY = int(random(160, 500));
+   
+   lettmelkX = int(random(120, 1700));
+   lettmelkY = int(random(160, 500));
+   
+   sjokoladeX = int(random(120, 450));
+   sjokoladeY = int(random(160, 800));
+   
+   musliX = int(random(120, 1700));
+   musliY = int(random(160, 500));
+   
+   yoghurtX = int(random(120, 450));
+   yoghurtY = int(random(160, 800));
+   
+   wienerbrodX = int(random(750, 1700));
+   wienerbrodY = int(random(160, 800));
+   
+   nugattiX = int(random(750, 1700));
+   nugattiY = int(random(160, 800));
+   
+   pannekakeX = int(random(750, 1700));
+   pannekakeY = int(random(160, 800));
+   
+   rand=true;
+   }
+   }
+   
+   
+   */
+  void brodBrett() {
+   
+
+    fill(#5AB39D);
+    textFont(overskrift, 48);
+    text("Næringsinnhold", width/width+70, height*0.10);
+    noFill();
+
+    textFont(overskrift);
+
+    fill(#E6D2AB);
+    //rect(150, 130, 400, 650, 11);
+    rect(width/width+70, height*0.166, width/width+400, 120, 11);
+    rect(width/width+70, height*0.3, width/width+400, 120, 11);
+    rect(width/width+70, height*0.433, width/width+400, 120, 11);
+    rect(width/width+70, height*0.566, width/width+400, 120, 11);
+    //rect(150, 650, 400, 130, 11);
+
+    noFill();
+    fill(#1D151D);
+    textFont(underskrift, 24);
+    text("kCal: 241.0 ", width/width+180, height/height+220);
+    text("Protein: 9,4 gram", width/width+180, height/height+340);
+    text("Fett: 2,6 gram", width/width+180, height/height+460);
+    text("Karbohydrater:" +"\n" + "41,4 gram",width/width+180 , height/height+580);
+    noFill();
+
+
+
+
+    fill(#5AB39D);
+    textFont(overskrift, 48);
+    text("Fun Facts", width-width/4, height*0.10);
+    noFill();
+    //rect(1400, 100, 400, 600, 7);
+    fill(#E6D2AB);
+    rect(width-width/3.4, height*0.13, width*0.25, height*0.30, 11);
+    noFill();
+    textFont(underskrift, 24);
+    fill(#1D151D);
+
+
+    if (millis()-lastTime > 6000) {
+      lastTime=millis();
+      rand1= int(random(0, 24));
+    }
+    if (millis()-lastTime2 > 8000) {
+      lastTime2=millis();
+      rand2= int(random(0, 24));
+    }
+    if (millis()-lastTime3 > 10000) {
+      lastTime3=millis();
+      rand3= int(random(0, 24));
+    }
+
+    text(funFacts[rand1], width-width/3.6, height*0.17);
+    text(funFacts[rand2], width-width/3.6, height*0.27);
+    text(funFacts[rand3], width-width/3.6, height*0.37);
+
+
+    noFill();
+
+
+    fill(#5AB39D);
+    textFont(overskrift, 48);
+    text("Er brød sunt?", width-width/4, height*0.50);
+    noFill();
+    fill(#E6D2AB);
+    rect(width-width/3.4, height*0.55, width*0.27, height*0.40, 11);
+    noFill();
+    textFont(underskrift, 24);
+    fill(#1D151D);
+    text("Brød og kornprodukter er basismatvarer " +"\n "+"i det norske kostholdet og står for 25 prosent "
+      +"\n"+"av det daglige energiinntaket i en " +"\n "+"gjennomsnittshusholdning.", width-width/3.6, height*0.60);
+    text("Å bruke brød og kornvarer i " +"\n "+"det daglige kostholdet er"
+      +"\n"+" ikke bare sunt og godt, men også " +"\n "+"raskt og lettvint i en travel hverdag.", width-width/3.6, height*0.75);
+    text("Kilde: brodogkorn.no", width-width/3.6, height*0.90);
+
+    noFill();
+
+    rect(width*0.045, height*0.80, 100, 100, 11);
+    rect(width*0.12, height*0.80, 100, 100, 11);
+    rect(width*0.195, height*0.80, 100, 100, 11);
+    rect(width*0.27, height*0.80, 100, 100, 11);
+    rect(width*0.345, height*0.80, 100, 100, 11);
+    counterObj();
+    
+
+
+
+    x=width/2;
+    y=width/2;
+    translate(x, 450, 0);
+    imageMode(CENTER);
+    //rotateZ(radians(frameCount));
+    //rotateX(radians(frameCount));
+    rotateY(radians(frameCount));
+    image(matBilder[0], 0, 0);
+
+
+
+    if (!telleSjekk) {
+      scann++;
+      telleSjekk = true;
+    }
+  }
+
+  void eggBrett() {
+
+   
+    fill(#5AB39D);
+    textFont(overskrift, 48);
+    text("Næringsinnhold", width/width+70, height*0.10);
+    noFill();
+
+    textFont(overskrift);
+
+    fill(#E6D2AB);
+    //rect(150, 130, 400, 650, 11);
+    rect(width/width+70, height/height+150, width/width+400, 120, 11);
+    rect(width/width+70, height/height+270, width/width+400, 120, 11);
+    rect(width/width+70, height/height+390, width/width+400, 120, 11);
+    rect(width/width+70, height/height+510, width/width+400, 120, 11);
+    //rect(150, 650, 400, 130, 11);
+
+    noFill();
+    fill(#1D151D);
+    textFont(underskrift, 24);
+    text("kCal: 241.0 ", width/width+180, height/height+220);
+    text("Protein: 9,4 gram", width/width+180, height/height+340);
+    text("Fett: 2,6 gram", width/width+180, height/height+460);
+    text("Karbohydrater:" +"\n" + "41,4 gram",width/width+180 , height/height+580);
+    noFill();
+
+
+
+
+    fill(#5AB39D);
+    textFont(overskrift, 48);
+    text("Fun Facts", width-width/4, height*0.10);
+    noFill();
+    //rect(1400, 100, 400, 600, 7);
+    fill(#E6D2AB);
+    rect(width-width/3.4, height*0.13, width*0.25, height*0.30, 11);
+    noFill();
+    textFont(underskrift, 24);
+    fill(#1D151D);
+
+
+    if (millis()-lastTime > 6000) {
+      lastTime=millis();
+      rand1= int(random(0, 24));
+    }
+    if (millis()-lastTime2 > 8000) {
+      lastTime2=millis();
+      rand2= int(random(0, 24));
+    }
+    if (millis()-lastTime3 > 10000) {
+      lastTime3=millis();
+      rand3= int(random(0, 24));
+    }
+
+    text(funFacts[rand1], width-width/3.6, height*0.17);
+    text(funFacts[rand2], width-width/3.6, height*0.27);
+    text(funFacts[rand3], width-width/3.6, height*0.37);
+
+
+    noFill();
+
+
+    fill(#5AB39D);
+    textFont(overskrift, 48);
+    text("Er brød sunt?", width-width/4, height*0.50);
+    noFill();
+    fill(#E6D2AB);
+    rect(width-width/3.4, height*0.55, width*0.27, height*0.40, 11);
+    noFill();
+    textFont(underskrift, 24);
+    fill(#1D151D);
+    text("Brød og kornprodukter er basismatvarer " +"\n "+"i det norske kostholdet og står for 25 prosent "
+      +"\n"+"av det daglige energiinntaket i en " +"\n "+"gjennomsnittshusholdning.", width-width/3.6, height*0.60);
+    text("Å bruke brød og kornvarer i " +"\n "+"det daglige kostholdet er"
+      +"\n"+" ikke bare sunt og godt, men også " +"\n "+"raskt og lettvint i en travel hverdag.", width-width/3.6, height*0.75);
+    text("Kilde: brodogkorn.no", width-width/3.6, height*0.90);
+
+    noFill();
+
+    rect(width*0.045, height*0.80, 100, 100, 11);
+    rect(width*0.12, height*0.80, 100, 100, 11);
+    rect(width*0.195, height*0.80, 100, 100, 11);
+    rect(width*0.27, height*0.80, 100, 100, 11);
+    rect(width*0.345, height*0.80, 100, 100, 11);
+    counterObj();
+    
+
+
+
+    x=width/2;
+    y=width/2;
+    translate(x, 450, 0);
+    imageMode(CENTER);
+    //rotateZ(radians(frameCount));
+    //rotateX(radians(frameCount));
+    rotateY(radians(frameCount));
+    image(matBilder[1], 0, 0);
+
+
+
+    if (!telleSjekk) {
+      scann++;
+      telleSjekk = true;
+    }
+  }
+
+  void havregrynBrett() {
+    scann++;
+  }
+
+  void youghurtBrett() {
+    scann++;
+  }
+
+  void hvitostBrett() {
+
+
+    if (!telleSjekk) {
+      scann++;
+      telleSjekk = true;
+    }
+  }
+
+  void skinkeBrett() {
+    scann++;
+  }
+
+  void wienerBrett() {
+    scann++;
+  }
+
+  void nugattiBrett() {
+    scann++;
+  }
+
+  void sjokoladeBrett() {
+    scann++;
+  }
+
+  void pannekakeBrett() {
+    scann++;
+  }
+  void melkBrett() {
+    scann++;
+  }
+
+  void juiceBrett() {
+    scann++;
+  }
+}
