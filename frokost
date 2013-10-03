@@ -1,0 +1,178 @@
+class Frokost {
+
+  void vurderFrokost(int s) {
+    int sunn=s;
+    if ( sunn<5) {
+      sunnFrokost();
+    }
+    else {
+      usunnFrokost();
+    }
+  }
+
+  void sunnFrokost() {
+    fill(#5AB39D);
+    textFont(overskrift, 48);
+    text("Næringsinnhold", 140, 80);
+    noFill();
+
+    textFont(overskrift);
+
+    fill(#E6D2AB);
+    //rect(150, 130, 400, 650, 11);
+    rect(150, 180, 400, 130, 11);
+    rect(150, 310, 400, 130, 11);
+    rect(150, 440, 400, 130, 11);
+    rect(150, 570, 400, 130, 11);
+    //rect(150, 650, 400, 130, 11);
+
+    noFill();
+    fill(#1D151D);
+    textFont(underskrift, 24);
+    text("kCal: 241.0 ", 280, 250);
+    text("Protein: 9,4 gram", 280, 380);
+    text("Fett: 2,6 gram", 280, 510);
+    text("Karbohydrater:" +"\n" + "41,4 gram", 280, 640);
+    noFill();
+
+
+    fill(0);
+    line(650, 180, 650, 700);
+    line(1225, 180, 1225, 700);
+    noFill();
+
+    noFill();
+    fill(#5AB39D);
+    textFont(overskrift, 48);
+    text("Fun Facts", 1350, 80);
+    noFill();
+    //rect(1400, 100, 400, 600, 7);
+    textFont(underskrift, 30);
+    fill(#1D151D);
+    text("Den første hamburgeren ble oppfunnet av" +"\n "+"en person med navn Louis Lassen i år 1900.", 1300, 200);
+    text("Landet som drikker mest cola per " +"\n "+"innbygger er Island.", 1300, 350);
+    text("Visste du at hvis du spiser" +"\n "+" masse rødbeter så tisser du til slutt rosa?", 1300, 500);
+
+    noFill();
+
+
+    fill(#5AB39D);
+    textFont(overskrift, 48);
+    text("Hvor sunn er din "+"\n"+"frokost?", 700, 80);
+    noFill();
+    //rect(1400, 100, 400, 600, 7);
+    fill(#E6D2AB);
+    noStroke();
+    rect(700, 180, 500, 220, 11);
+    stroke(0);
+    noFill();
+    textFont(underskrift, 38);
+    fill(#1D151D);
+    text("Frokosten din var sunn!"+"\n"+"Bra jobba! "
+      +"\n"+"Til venstre kan du se hvor mye " +"\n "+"næringsstoffer du har fått"+"\n"+" i deg", 710, 220);
+    //text("Å bruke brød og kornvarer i " +"\n "+"det daglige kostholdet er"
+    //  +"\n"+" ikke bare sunt og godt, men også " +"\n "+"raskt og lettvint i en travel hverdag.", 700, 350);
+    //text("Kilde: brodogkorn.no", 700, 500);
+
+    noFill();
+
+    rect(150, 850, 100, 100, 11);
+    rect(300, 850, 100, 100, 11);
+    rect(450, 850, 100, 100, 11);
+    rect(600, 850, 100, 100, 11);
+    rect(750, 850, 100, 100, 11);
+    imageMode(CORNER);
+    //image(skannImg, 150, 850);
+
+    fill(#F23333);
+    textFont(underskrift2, 24);
+    rect(1500, 800, 200, 100, 11);
+    noFill();
+    fill(#FFFFFF);
+    text("AVSLUTT", 1550, 855);
+    noFill();
+  }
+
+  void usunnFrokost() {
+    fill(#5AB39D);
+    textFont(overskrift, 48);
+    text("Næringsinnhold", 140, 80);
+    noFill();
+
+    textFont(overskrift);
+
+    fill(#E6D2AB);
+    //rect(150, 130, 400, 650, 11);
+    rect(150, 180, 400, 130, 11);
+    rect(150, 310, 400, 130, 11);
+    rect(150, 440, 400, 130, 11);
+    rect(150, 570, 400, 130, 11);
+    //rect(150, 650, 400, 130, 11);
+
+    noFill();
+    fill(#1D151D);
+    textFont(underskrift, 24);
+    text("kCal: 241.0 ", 280, 250);
+    text("Protein: 9,4 gram", 280, 380);
+    text("Fett: 2,6 gram", 280, 510);
+    text("Karbohydrater:" +"\n" + "41,4 gram", 280, 640);
+    noFill();
+
+
+    fill(0);
+    line(650, 180, 650, 700);
+    line(1225, 180, 1225, 700);
+    noFill();
+
+    noFill();
+    fill(#5AB39D);
+    textFont(overskrift, 48);
+    text("Fun Facts", 1350, 80);
+    noFill();
+    //rect(1400, 100, 400, 600, 7);
+    textFont(underskrift, 30);
+    fill(#1D151D);
+    text("Den første hamburgeren ble oppfunnet av" +"\n "+"en person med navn Louis Lassen i år 1900.", 1300, 200);
+    text("Landet som drikker mest cola per " +"\n "+"innbygger er Island.", 1300, 350);
+    text("Visste du at hvis du spiser" +"\n "+" masse rødbeter så tisser du til slutt rosa?", 1300, 500);
+
+    noFill();
+
+
+    fill(#5AB39D);
+    textFont(overskrift, 48);
+    text("Hvor sunn er din "+"\n"+"frokost?", 700, 80);
+    noFill();
+    //rect(1400, 100, 400, 600, 7);
+    fill(#E6D2AB);
+    noStroke();
+    rect(700, 180, 500, 220, 11);
+    stroke(0);
+    noFill();
+    textFont(underskrift, 38);
+    fill(#1D151D);
+    text("Frokosten din var sunn!"+"\n"+"Bra jobba! "
+      +"\n"+"Til venstre kan du se hvor mye " +"\n "+"næringsstoffer du har fått"+"\n"+" i deg", 710, 220);
+    //text("Å bruke brød og kornvarer i " +"\n "+"det daglige kostholdet er"
+    //  +"\n"+" ikke bare sunt og godt, men også " +"\n "+"raskt og lettvint i en travel hverdag.", 700, 350);
+    //text("Kilde: brodogkorn.no", 700, 500);
+
+    noFill();
+
+    rect(150, 850, 100, 100, 11);
+    rect(300, 850, 100, 100, 11);
+    rect(450, 850, 100, 100, 11);
+    rect(600, 850, 100, 100, 11);
+    rect(750, 850, 100, 100, 11);
+    imageMode(CORNER);
+    image(skannImg, 150, 850);
+
+    fill(#F23333);
+    textFont(underskrift2, 24);
+    rect(1500, 800, 200, 100, 11);
+    noFill();
+    fill(#FFFFFF);
+    text("AVSLUTT", 1550, 855);
+    noFill();
+  }
+}
