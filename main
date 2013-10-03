@@ -1,0 +1,152 @@
+//import saito.objloader.*;
+
+
+String funFacts[];
+PFont overskrift;
+PFont underskrift;
+PFont underskrift2;
+int scann = 1;
+int sunn=0;
+PImage[] matBilder = new PImage[4];
+PImage img;
+PImage skannImg;
+
+PImage test;
+Mat mat = new Mat();
+//Bord bord = new Bord();
+Frokost frokost = new Frokost();
+int x;
+int y;
+boolean telleSjekk=false;
+
+boolean rand=false;
+
+long lastTime=0, lastTime2=0, lastTime3=0;
+
+int breadX=0, eggX=0, gulostX=0, juiceX=0, 
+knekkebrodX=0, koktskinkeX=0, lettmelkX=0, 
+sjokoladeX=0, musliX=0, yoghurtX=0, 
+nugattiX=0, pannekakeX=0, wienerbrodX=0;
+
+int breadY=0, eggY=0, gulostY=0, juiceY=0, 
+knekkebrodY=0, koktskinkeY=0, lettmelkY=0, 
+sjokoladeY=0, musliY=0, yoghurtY=0, 
+nugattiY=0, pannekakeY=0, wienerbrodY=0;
+
+int rand1=0, rand2=1, rand3=2;
+
+
+
+void setup() {
+  size(displayWidth, displayHeight, P3D);
+  strokeWeight(2);
+  overskrift = loadFont("CooperBlack-48.vlw");  
+  underskrift = loadFont("Calibri-48.vlw");  
+  underskrift2 = loadFont("Calibri-Bold-48.vlw");
+
+  funFacts = new String [25];
+
+  funFacts[0] = "Visste du at i USA, blir bananer"+"\n"+" solgt mer enn noen annen frukt?";
+  funFacts[1] = "Antarktis er det eneste kontinentet"+"\n"+" som ikke har en McDonalds";
+  funFacts[2] = "Landet som drikker mest"+"\n"+" cola per innbygger er Island";
+  funFacts[3] = "Den første hamburgeren ble oppfunnet"+"\n"+" av en person med navn Louis Lassen i år 1900";
+  funFacts[4] = "Visste du at alliumphobia er frykten for løk?";
+  funFacts[5] = "Verdens største gulrot var 5.18 meter lang";
+  funFacts[6] = "Visste du at hvis du spiser "+"\n"+"masse rødbeter så tisser du til slutt rosa?";
+  funFacts[7] = "Visste du at søtpoteter faktisk"+"\n"+" ikke er en del av potetfamilien?";
+  funFacts[8] = "Bananer inneholder en naturlig "+"\n"+"kjemikalie som kan gjøre en person glad/lykkelig.";
+  funFacts[9] = "Over 60% av verdens kakao"+"\n"+" blir produsert i vest-afrika.";
+  funFacts[10] = "Visste du folk før trodde"+"\n"+" at tomater var giftig?";
+  funFacts[11] = "Visste du at Aztekerne var"+"\n"+" de første som lagde salsa saus?";
+  funFacts[12] = "1,5 milliarder kopper med te"+"\n"+" blir drukket hver dag over hele verden.";
+  funFacts[13] = "Epler tilhører rose-familien.";
+  funFacts[14] = "Jo mer fett det er i en ost,"+"\n"+"jo raskere smelter den";
+  funFacts[15] = "Coca-Cola ville vært grønn farge"+"\n"+"dersom man ikke hadde tilsatt kunstig farge";
+  funFacts[16] = "De gamle grekerne delte ut seller"+"\n"+"i i premie til vinnerne av idrettskonkurranser";
+  funFacts[17] = "Det er flere mennesker som spiser "+"\n"+"alligatorer enn det er alligatorer som spiser mennesker";
+  funFacts[18] = "Bibelen nevner salt mer enn tretti ganger";
+  funFacts[19] = "Tallerkenen er en relativt ny oppfinnelse. "+"\n"+"Fram til 1500-tallet var det vanlig å spise"+"\n"+"på en tjukk skive med gammelt brød";
+  funFacts[20] = "Odontofobi er frykten for tenner";
+  funFacts[21] = "Det første produktet "+"\n"+"Sony lanserte var en riskoker";
+  funFacts[22] = " I 1830 ble ketchup solgt som medisin";
+  funFacts[23] = "De fleste leppestifter"+"\n"+"inneholder fiskeskjell";
+  funFacts[24] = "En tarantell kan leve i to år uten mat";
+
+
+
+
+
+  lastTime=millis();
+
+  matBilder[0] = loadImage("bread.png");
+  matBilder[1]=loadImage("egg.png");
+
+
+  //matBilder[4] = loadImage("knekkebrod.png");
+
+  skannImg = loadImage("skann1.jpg");
+
+
+  /*
+  if (scann!=4) {
+   //Arduino sin readyScannMode() 
+   }
+   */
+}
+boolean sketchFullScreen() {
+  return true;
+}
+
+
+void draw() {
+
+  background(#DCEDE9);
+
+  textSize(24);
+
+  //Hvis brød skannes - må kobles til arduino
+
+  //mat.brodBrett();
+  //frokost.vurderFrokost(sunn);
+  //frokost.vurderFrokost(8);
+  //mat.hvitostBrett();
+  mat.eggBrett();
+  //mat.knekkebrBret();
+  //bord.interaktivtBord();
+}
+
+void counterObj() {
+  if (scann==1) {
+    imageMode(CORNER);
+    image(skannImg, width*0.045, height*0.80);
+  }
+  else if (scann==2) {
+    imageMode(CORNER);
+    image(skannImg, width*0.045, height*0.80);
+    image(skannImg, width*0.12, height*0.80);
+  }
+  else if (scann==3) {
+    imageMode(CORNER);
+    image(skannImg, width*0.045, height*0.80);
+    image(skannImg, width*0.12, height*0.80);
+    image(skannImg, width*0.195, height*0.80);
+  }
+  else if (scann==4) {
+    imageMode(CORNER);
+    image(skannImg, width*0.045, height*0.80);
+    image(skannImg, width*0.12, height*0.80);
+    image(skannImg, width*0.195, height*0.80);
+    image(skannImg, width*0.27, height*0.80);
+  }
+  else if (scann==5) {
+    imageMode(CORNER);
+    image(skannImg, width*0.045, height*0.80);
+    image(skannImg, width*0.12, height*0.80);
+    image(skannImg, width*0.195, height*0.80);
+    image(skannImg, width*0.27, height*0.80);
+    image(skannImg, width*0.345, height*0.80);
+  }
+  else {
+  }
+}
+
